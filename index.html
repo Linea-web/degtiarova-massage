@@ -1,0 +1,881 @@
+<!doctype html>
+<html lang="lt">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Nataliia Degtiarova | Masažas Vilniuje</title>
+  <meta name="description" content="Profesionalus masažas Vilniuje. Nataliia Degtiarova — masažo specialistė ir osteopatė, turinti daugiau nei 20 metų patirties.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --cream: #f8f3ec;
+      --paper: #fffdf9;
+      --sand: #e5d8c9;
+      --warm: #c5a486;
+      --brown: #423832;
+      --muted: #756b64;
+      --line: rgba(66, 56, 50, .13);
+      --shadow: 0 15px 40px rgba(59, 47, 40, .07);
+      --radius: 22px;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      background: var(--cream);
+      color: var(--brown);
+      font-family: Inter, Arial, sans-serif;
+      font-size: 15px;
+      line-height: 1.55;
+    }
+    a { color: inherit; text-decoration: none; }
+    img { display: block; width: 100%; }
+    .shell { max-width: 1100px; margin: 0 auto; padding: 0 18px; }
+    .topbar {
+      height: 62px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 14px;
+    }
+    .brand {
+      letter-spacing: .16em;
+      text-transform: uppercase;
+      font-size: 11px;
+      font-weight: 600;
+    }
+    .language {
+      display: flex;
+      gap: 4px;
+      padding: 4px;
+      background: rgba(255,253,249,.78);
+      border: 1px solid var(--line);
+      border-radius: 999px;
+    }
+    .language button {
+      border: 0;
+      background: transparent;
+      color: var(--muted);
+      cursor: pointer;
+      padding: 6px 10px;
+      border-radius: 999px;
+      font: inherit;
+      font-size: 12px;
+      font-weight: 600;
+    }
+    .language button.active { background: var(--brown); color: white; }
+    .hero {
+      background: var(--paper);
+      border-radius: var(--radius);
+      overflow: hidden;
+      box-shadow: var(--shadow);
+    }
+    .hero-photo {
+      height: 184px;
+      object-fit: cover;
+      object-position: 52% 25%;
+    }
+    .hero-content { padding: 20px 20px 23px; }
+    .eyebrow {
+      font-size: 11px;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+      color: var(--warm);
+      margin-bottom: 10px;
+      font-weight: 600;
+    }
+    h1 {
+      font-family: "Cormorant Garamond", Georgia, serif;
+      font-size: clamp(36px, 8vw, 53px);
+      line-height: .98;
+      margin: 0 0 10px;
+      font-weight: 600;
+      letter-spacing: -.02em;
+    }
+    .lead {
+      margin: 0 0 10px;
+      font-size: 16px;
+      color: var(--brown);
+    }
+    .credentials {
+      color: var(--muted);
+      font-size: 13px;
+      margin: 0 0 20px;
+    }
+    .buttons { display: flex; flex-wrap: wrap; gap: 10px; }
+    .hero-text h1 { font-size: 38px; line-height: 1.02; }
+    @media (max-width: 759px) {
+      .hero-content .buttons { margin-top: 1px; }
+      .hero-text h1 { max-width: 270px; }
+    }
+    .button {
+      border-radius: 999px;
+      padding: 12px 18px;
+      font-size: 14px;
+      font-weight: 500;
+      transition: transform .2s ease;
+    }
+    .button:hover { transform: translateY(-1px); }
+    .button-main { background: var(--brown); color: #fff; }
+    .button-secondary { border: 1px solid var(--line); background: var(--paper); }
+    section { padding-top: 40px; }
+    .section-head { margin-bottom: 20px; }
+    .section-head h2 {
+      margin: 0 0 6px;
+      font-family: "Cormorant Garamond", Georgia, serif;
+      font-size: 34px;
+      font-weight: 600;
+      line-height: 1.05;
+    }
+    .section-head p { margin: 0; color: var(--muted); }
+    .category { margin-bottom: 24px; }
+    .category-title {
+      font-size: 12px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: .13em;
+      color: var(--warm);
+      margin: 0 0 9px;
+    }
+    details {
+      background: var(--paper);
+      border: 1px solid var(--line);
+      margin-bottom: 8px;
+      border-radius: 14px;
+      overflow: hidden;
+    }
+    summary {
+      cursor: pointer;
+      list-style: none;
+      padding: 15px 15px;
+      display: flex;
+      gap: 12px;
+      align-items: center;
+      justify-content: space-between;
+    }
+    summary::-webkit-details-marker { display:none; }
+    .service-name { font-weight: 500; font-size: 14px; }
+    .service-right { display: flex; align-items: center; gap: 12px; flex-shrink: 0; }
+    .duration { color: var(--muted); font-size: 13px; white-space: nowrap; }
+    .plus {
+      height: 19px; width: 19px; border-radius: 50%;
+      border: 1px solid var(--sand); display: grid; place-items: center;
+      color: var(--muted); font-size: 15px; line-height: 1;
+    }
+    details[open] .plus { transform: rotate(45deg); }
+    .description {
+      border-top: 1px solid var(--line);
+      padding: 13px 15px 15px;
+      color: var(--muted);
+      font-size: 13.5px;
+    }
+    .about {
+      background: var(--paper);
+      border-radius: var(--radius);
+      overflow: hidden;
+      box-shadow: var(--shadow);
+    }
+    .about img {
+      height: 270px;
+      object-fit: cover;
+      object-position: center 24%;
+    }
+    .about-copy { padding: 22px 20px 25px; }
+    .about-copy h2 {
+      font-family: "Cormorant Garamond", Georgia, serif;
+      font-size: 34px; line-height: 1;
+      font-weight: 600; margin: 0 0 14px;
+    }
+    .about-copy p { color: var(--muted); margin: 0 0 13px; }
+    .extras {
+      display: grid;
+      gap: 10px;
+    }
+    .extra-card {
+      background: var(--paper);
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      padding: 18px;
+    }
+    .extra-card strong { display: block; margin-bottom: 4px; }
+    .extra-card span { color: var(--muted); font-size: 13px; }
+    .contact {
+      background: var(--brown);
+      color: #fff;
+      border-radius: var(--radius);
+      padding: 28px 20px;
+      margin-bottom: 28px;
+    }
+    .contact h2 {
+      margin: 0 0 8px;
+      font-family: "Cormorant Garamond", Georgia, serif;
+      font-size: 37px;
+      line-height: 1;
+      font-weight: 600;
+    }
+    .contact-intro { color: rgba(255,255,255,.7); margin: 0 0 21px; }
+    .contact .button-main { background: #fff; color: var(--brown); }
+    .contact .button-secondary { border-color: rgba(255,255,255,.35); background: transparent; color: #fff; }
+    .contact-info { border-top: 1px solid rgba(255,255,255,.15); margin-top: 23px; padding-top: 20px; display: grid; gap: 13px; }
+    .item-label {
+      display: block; color: rgba(255,255,255,.55); text-transform: uppercase;
+      letter-spacing: .14em; font-size: 10px; font-weight: 600; margin-bottom: 3px;
+    }
+    .map {
+      margin-top: 20px;
+      height: 205px;
+      width: 100%;
+      border: 0;
+      border-radius: 15px;
+      filter: saturate(.7);
+    }
+    footer {
+      padding: 0 0 28px;
+      color: var(--muted);
+      font-size: 12px;
+      text-align: center;
+    }
+    @media (min-width: 760px) {
+      .shell { padding: 0 32px; }
+      .topbar { height: 78px; }
+      .hero { display: block; min-height: 0; }
+      .hero-photo {
+        height: 285px;
+        min-height: 0;
+        object-position: center 32%;
+      }
+      .hero-content {
+        padding: 30px 40px 32px;
+        display: grid;
+        grid-template-columns: 1fr auto;
+        column-gap: 38px;
+        align-items: end;
+      }
+      .hero-text { max-width: 600px; }
+      .hero-content .buttons { align-self: end; margin-bottom: 4px; }
+      .hero-text h1 { font-size: 52px; white-space: nowrap; margin-bottom: 8px; }
+      .hero-content .credentials { margin-bottom: 0; }
+      section { padding-top: 56px; }
+      .services-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; align-items: start; }
+      .about { display: grid; grid-template-columns: .43fr .57fr; }
+      .about img { height: 100%; min-height: 365px; }
+      .about-copy { padding: 48px 44px; display: flex; flex-direction: column; justify-content: center; }
+      .extras { grid-template-columns: 1fr 1fr; }
+      .contact { padding: 45px 44px; }
+      .contact-grid { display: grid; grid-template-columns: .83fr 1.17fr; gap: 42px; }
+      .map { height: 292px; margin-top: 0; }
+    }
+  
+    /* Refined hero composition: the photograph remains meaningful on both screen sizes. */
+    .hero-photo {
+      height: 184px;
+      object-fit: cover;
+      object-position: center top;
+    }
+    @media (min-width: 760px) {
+      .hero {
+        display: grid;
+        grid-template-columns: .92fr 1.08fr;
+        min-height: 0;
+      }
+      .hero-content {
+        grid-column: 1;
+        grid-row: 1;
+        height: 374px;
+        padding: 42px 38px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+      .hero-text h1 {
+        white-space: normal;
+        font-size: 48px;
+        line-height: 1.02;
+      }
+      .hero-content .credentials { margin-bottom: 20px; }
+      .hero-content .buttons { margin-bottom: 0; align-self: initial; }
+      .hero-photo {
+        grid-column: 2;
+        grid-row: 1;
+        height: 374px;
+        min-height: 0;
+        object-position: center center;
+      }
+    }
+
+  
+    /* Services: one balanced list with a practical booking column on desktop. */
+    .treatments-layout { display: flex; flex-direction: column; gap: 26px; }
+    .treatments-list { order: 1; }
+    .booking-panel { order: 2; }
+    .body-category { margin-top: 24px; }
+    .booking-panel-inner {
+      background: var(--paper);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 22px 20px;
+    }
+    .booking-copy { margin: 0 0 18px; color: var(--muted); font-size: 14px; }
+    .booking-buttons { display: flex; flex-wrap: wrap; gap: 9px; margin-bottom: 23px; }
+    .booking-buttons .button { padding: 11px 16px; }
+    .panel-info {
+      border-top: 1px solid var(--line);
+      padding-top: 19px;
+      display: grid;
+      gap: 16px;
+      font-size: 14px;
+    }
+    .panel-label {
+      display: block;
+      color: var(--warm);
+      text-transform: uppercase;
+      letter-spacing: .14em;
+      font-size: 10px;
+      font-weight: 600;
+      margin-bottom: 4px;
+    }
+    .panel-map {
+      display: block;
+      margin-top: 21px;
+      height: 190px;
+      width: 100%;
+      border: 0;
+      border-radius: 14px;
+      filter: saturate(.7);
+    }
+    .description {
+      line-height: 1.65;
+      font-size: 14px;
+      padding: 15px 16px 17px;
+    }
+    .final-action { padding-bottom: 28px; }
+    .final-action-inner {
+      background: var(--paper);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 25px 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+    }
+    .final-action-inner h2 {
+      margin: 0;
+      font-family: "Cormorant Garamond", Georgia, serif;
+      font-size: 34px;
+      line-height: 1;
+      font-weight: 600;
+    }
+    @media (min-width: 760px) {
+      .treatments-layout {
+        display: grid;
+        grid-template-columns: 300px minmax(0, 1fr);
+        gap: 34px;
+        align-items: start;
+      }
+      .booking-panel { order: 1; position: sticky; top: 24px; }
+      .treatments-list { order: 2; }
+      .booking-panel-inner { padding: 25px 22px; }
+      .panel-map { height: 172px; }
+      .category { margin-bottom: 0; }
+      .body-category { margin-top: 30px; }
+      .final-action-inner {
+        padding: 30px 38px;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+      }
+    }
+
+  </style>
+</head>
+<body>
+  <header class="shell topbar">
+    <div class="brand">Nataliia Degtiarova</div>
+    <nav class="language" aria-label="Language">
+      <button type="button" class="active" data-lang="lt">LT</button>
+      <button type="button" data-lang="en">EN</button>
+      <button type="button" data-lang="ru">RU</button>
+    </nav>
+  </header>
+
+  <main class="shell">
+    <div class="hero">
+      <img class="hero-photo" src="assets/hero-horizontal.jpg" alt="">
+      <div class="hero-content">
+        <div class="hero-text">
+          <div class="eyebrow" data-t="heroEyebrow">Masažas Vilniuje</div>
+          <h1>Nataliia Degtiarova</h1>
+          <p class="lead" data-t="heroLead">Masažo specialistė ir osteopatė</p>
+          <p class="credentials" data-t="heroCredentials">Medicininis išsilavinimas · Daugiau nei 20 metų patirties</p>
+        </div>
+        <div class="buttons">
+          <a class="button button-main" data-t="book" href="https://treatwellapp.page.link/H68vd" target="_blank" rel="noopener">Registruotis</a>
+          <a class="button button-secondary" href="https://www.instagram.com/bodybeauty_degtiarova/" target="_blank" rel="noopener">Instagram</a>
+        </div>
+      </div>
+    </div>
+
+    <section id="services">
+      <div class="section-head">
+        <h2 data-t="servicesTitle">Paslaugos</h2>
+        <p data-t="servicesIntro">Pasirinkite procedūrą ir peržiūrėkite išsamesnį aprašymą.</p>
+      </div>
+
+      <div class="treatments-layout">
+        <aside class="booking-panel">
+          <div class="booking-panel-inner">
+            <div class="eyebrow" data-t="contactTitle">Registracija</div>
+            <p class="booking-copy" data-t="contactIntro">Pasirinkite patogų laiką internetu arba parašykite Instagram.</p>
+            <div class="booking-buttons">
+              <a class="button button-main" data-t="book" href="https://treatwellapp.page.link/H68vd" target="_blank" rel="noopener">Registruotis</a>
+              <a class="button button-secondary" data-t="writeInstagram" href="https://www.instagram.com/bodybeauty_degtiarova/" target="_blank" rel="noopener">Parašyti Instagram</a>
+            </div>
+            <div class="panel-info">
+              <div>
+                <span class="panel-label" data-t="addressLabel">Adresas</span>
+                <a href="https://maps.google.com/?q=Mindaugo+g.+27-115A,+Vilnius" target="_blank" rel="noopener">Mindaugo g. 27–115A, Vilnius</a>
+              </div>
+              <div>
+                <span class="panel-label" data-t="hoursLabel">Darbo laikas</span>
+                <span data-t="hours">Pirmadienis–penktadienis 9:00–20:00<br>Šeštadienis 9:00–16:00</span>
+              </div>
+              <div>
+                <span class="panel-label" data-t="contactsLabel">Kontaktai</span>
+                <a href="tel:+37061374487">+370 613 74487</a><br>
+                <a href="mailto:d.nata.22.02.85@gmail.com">d.nata.22.02.85@gmail.com</a>
+              </div>
+            </div>
+            <iframe class="panel-map" loading="lazy" title="Map" src="https://maps.google.com/maps?q=Mindaugo%20g.%2027-115A%2C%20Vilnius&t=&z=15&ie=UTF8&iwloc=&output=embed"></iframe>
+          </div>
+        </aside>
+
+        <div class="treatments-list">
+          <div class="category">
+            <h3 class="category-title" data-t="faceTitle">Veido masažai</h3>
+            <div id="face-services"></div>
+          </div>
+          <div class="category body-category">
+            <h3 class="category-title" data-t="bodyTitle">Kūno masažai</h3>
+            <div id="body-services"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="about">
+        <img src="assets/portrait.jpg" alt="Nataliia Degtiarova">
+        <div class="about-copy">
+          <div class="eyebrow" data-t="aboutEyebrow">Apie specialistę</div>
+          <h2 data-t="aboutTitle">Profesionali priežiūra ir ramybė</h2>
+          <p data-t="aboutText1">Esu sertifikuota masažo specialistė ir osteopatė, turinti medicininį išsilavinimą ir daugiau nei 20 metų profesinės patirties.</p>
+          <p data-t="aboutText2">Kiekvieną procedūrą pritaikau individualiai, derindama rūpestį kūnu, atsipalaidavimą ir estetinę gerovę.</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="section-head">
+        <h2 data-t="additionalTitle">Papildomai</h2>
+      </div>
+      <div class="extras">
+        <div class="extra-card">
+          <strong data-t="giftTitle">Dovanų kuponai</strong>
+          <span data-t="giftText">Rami ir dėmesinga dovana artimam žmogui.</span>
+        </div>
+        <div class="extra-card">
+          <strong data-t="cosmeticsTitle">Kūno priežiūros priemonės</strong>
+          <span data-t="cosmeticsText">Individuali priežiūros priemonių parinkimo konsultacija.</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="final-action">
+      <div class="final-action-inner">
+        <div>
+          <div class="eyebrow" data-t="finalEyebrow">Vizitui</div>
+          <h2 data-t="finalTitle">Skirkite laiko sau</h2>
+        </div>
+        <div class="buttons">
+          <a class="button button-main" data-t="book" href="https://treatwellapp.page.link/H68vd" target="_blank" rel="noopener">Registruotis</a>
+          <a class="button button-secondary" href="https://www.instagram.com/bodybeauty_degtiarova/" target="_blank" rel="noopener">Instagram</a>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer data-t="footer">Nataliia Degtiarova · Masažas Vilniuje</footer>
+
+  <script>
+    const translations = {
+      lt: {
+        heroEyebrow: "Masažas Vilniuje",
+        heroLead: "Masažo specialistė ir osteopatė",
+        heroCredentials: "Medicininis išsilavinimas · Daugiau nei 20 metų patirties",
+        book: "Registruotis",
+        servicesTitle: "Paslaugos",
+        servicesIntro: "Pasirinkite procedūrą ir peržiūrėkite išsamesnį aprašymą.",
+        faceTitle: "Veido masažai",
+        bodyTitle: "Kūno masažai",
+        aboutEyebrow: "Apie specialistę",
+        aboutTitle: "Profesionali priežiūra ir ramybė",
+        aboutText1: "Esu sertifikuota masažo specialistė ir osteopatė, turinti medicininį išsilavinimą ir daugiau nei 20 metų profesinės patirties.",
+        aboutText2: "Kiekvieną procedūrą pritaikau individualiai, derindama rūpestį kūnu, atsipalaidavimą ir estetinę gerovę.",
+        additionalTitle: "Papildomai",
+        giftTitle: "Dovanų kuponai",
+        giftText: "Rami ir dėmesinga dovana artimam žmogui.",
+        cosmeticsTitle: "Kūno priežiūros priemonės",
+        cosmeticsText: "Individuali priežiūros priemonių parinkimo konsultacija.",
+        contactTitle: "Registracija",
+        contactIntro: "Pasirinkite patogų laiką internetu arba parašykite Instagram.",
+        writeInstagram: "Parašyti Instagram",
+        addressLabel: "Adresas",
+        hoursLabel: "Darbo laikas",
+        hours: "Pirmadienis–penktadienis 9:00–20:00<br>Šeštadienis 9:00–16:00",
+        contactsLabel: "Kontaktai",
+        finalEyebrow: "Vizitui",
+        finalTitle: "Skirkite laiko sau",
+        footer: "Nataliia Degtiarova · Masažas Vilniuje"
+      },
+      en: {
+        heroEyebrow: "Massage in Vilnius",
+        heroLead: "Massage therapist and osteopath",
+        heroCredentials: "Medical background · Over 20 years of experience",
+        book: "Book online",
+        servicesTitle: "Treatments",
+        servicesIntro: "Select a treatment to read a fuller description.",
+        faceTitle: "Facial massage",
+        bodyTitle: "Body massage",
+        aboutEyebrow: "About the specialist",
+        aboutTitle: "Professional care and calm",
+        aboutText1: "I am a certified massage therapist and osteopath with a medical background and over 20 years of professional experience.",
+        aboutText2: "Each treatment is individually tailored, combining care for the body, relaxation and aesthetic wellbeing.",
+        additionalTitle: "Additionally",
+        giftTitle: "Gift certificates",
+        giftText: "A calm and thoughtful gift for someone special.",
+        cosmeticsTitle: "Body care products",
+        cosmeticsText: "Personalised consultation on body care products.",
+        contactTitle: "Booking",
+        contactIntro: "Choose a convenient appointment online or contact me on Instagram.",
+        writeInstagram: "Message on Instagram",
+        addressLabel: "Address",
+        hoursLabel: "Opening hours",
+        hours: "Monday–Friday 9:00–20:00<br>Saturday 9:00–16:00",
+        contactsLabel: "Contacts",
+        finalEyebrow: "For your visit",
+        finalTitle: "Take time for yourself",
+        footer: "Nataliia Degtiarova · Massage in Vilnius"
+      },
+      ru: {
+        heroEyebrow: "Массаж в Вильнюсе",
+        heroLead: "Мастер массажа и остеопат",
+        heroCredentials: "Медицинское образование · Более 20 лет опыта",
+        book: "Записаться",
+        servicesTitle: "Услуги",
+        servicesIntro: "Выберите процедуру, чтобы открыть более подробное описание.",
+        faceTitle: "Массаж лица",
+        bodyTitle: "Массаж тела",
+        aboutEyebrow: "О специалисте",
+        aboutTitle: "Профессиональная забота и спокойствие",
+        aboutText1: "Я сертифицированный мастер массажа и остеопат с медицинским образованием и более чем 20-летним профессиональным опытом.",
+        aboutText2: "Каждая процедура подбирается индивидуально, сочетая заботу о теле, расслабление и эстетическое благополучие.",
+        additionalTitle: "Дополнительно",
+        giftTitle: "Подарочные сертификаты",
+        giftText: "Спокойный и внимательный подарок для близкого человека.",
+        cosmeticsTitle: "Средства по уходу за телом",
+        cosmeticsText: "Индивидуальный подбор средств для ухода за телом.",
+        contactTitle: "Запись",
+        contactIntro: "Выберите удобное время онлайн или напишите в Instagram.",
+        writeInstagram: "Написать в Instagram",
+        addressLabel: "Адрес",
+        hoursLabel: "Время работы",
+        hours: "Понедельник–пятница 9:00–20:00<br>Суббота 9:00–16:00",
+        contactsLabel: "Контакты",
+        finalEyebrow: "Для визита",
+        finalTitle: "Найдите время для себя",
+        footer: "Nataliia Degtiarova · Массаж в Вильнюсе"
+      }
+    };
+
+    const services = {
+      "ru": {
+            "face": [
+                  [
+                        "Голливудская пластика лица",
+                        "45 мин",
+                        "Моделирующая процедура для лица, в которой особое внимание уделяется мягкому расслаблению мышц и визуальной свежести кожи. Массаж подходит тем, кто хочет сочетать уход за лицом с приятным ощущением отдыха и более собранным, ухоженным видом."
+                  ],
+                  [
+                        "Нейро-био-структуральный хиромассаж лица",
+                        "45 мин",
+                        "Расслабляющая техника с внимательной проработкой лицевых мышц. Процедуру можно выбрать при ощущении напряжения в лице, усталости или желании получить спокойный, деликатный уход с акцентом на комфорт."
+                  ],
+                  [
+                        "Классический массаж лица",
+                        "30 мин",
+                        "Деликатный формат ухода за лицом с классическими ручными приёмами. Подходит как регулярная процедура для свежего внешнего вида кожи и приятного расслабления без длительного сеанса."
+                  ]
+            ],
+            "body": [
+                  [
+                        "Моделирующий массаж",
+                        "60 мин",
+                        "Более активная ручная процедура с акцентом на выбранные зоны тела и качество кожи. Массаж может подойти тем, кто хочет уделить внимание контурам тела, ощущению лёгкости и интенсивному уходу."
+                  ],
+                  [
+                        "Абхьянга — аюрведический масляный массаж",
+                        "60 мин",
+                        "Массаж всего тела с использованием масла, вдохновлённый аюрведической традицией. Плавные движения и тёплая атмосфера процедуры особенно подходят для глубокого отдыха, замедления и восстановления ощущения комфорта в теле."
+                  ],
+                  [
+                        "Антицеллюлитный массаж",
+                        "60 мин",
+                        "Интенсивная ручная процедура для отдельных участков тела — например, бёдер, ягодиц или живота. Основной акцент делается на активной проработке тканей, тонусе кожи и индивидуальном выборе зон перед началом сеанса."
+                  ],
+                  [
+                        "Антицеллюлитный хиромассаж",
+                        "60 мин",
+                        "Более индивидуальный формат работы с телом, в котором активные приёмы могут сочетаться с лимфодренажным и расслабляющим акцентом. Процедура подбирается с учётом выбранных зон и желаемой интенсивности."
+                  ],
+                  [
+                        "Общий массаж тела и шеи",
+                        "60 мин",
+                        "Классический массаж всего тела с особым вниманием к спине, плечам и шейно-воротниковой зоне. Его часто выбирают после длительной сидячей работы, физической нагрузки или периода повышенного напряжения; интенсивность подбирается индивидуально."
+                  ],
+                  [
+                        "Спортивный массаж",
+                        "60 мин",
+                        "Более интенсивная процедура для людей с активным образом жизни. Массаж может выполняться с акцентом на зоны, испытывающие нагрузку во время тренировок, и подойдёт для расслабления после физической активности."
+                  ],
+                  [
+                        "Расслабляющий массаж",
+                        "60 мин",
+                        "Мягкий ритмичный массаж для спокойствия и полноценной паузы в течение напряжённой недели. Здесь главное — комфорт, тишина, бережное прикосновение и ощущение отдыха после процедуры."
+                  ],
+                  [
+                        "Массаж для беременных",
+                        "60 мин",
+                        "Деликатный массаж, адаптированный для комфорта будущей мамы. Перед процедурой обсуждаются самочувствие, удобное положение тела и зоны, которым требуется особенно бережное внимание."
+                  ],
+                  [
+                        "Детский массаж",
+                        "30 мин",
+                        "Мягкая процедура для детей, проводимая с учётом возраста и индивидуальных особенностей. Формат и цели массажа предварительно обсуждаются с родителем."
+                  ],
+                  [
+                        "Массаж спины и шеи",
+                        "30 мин",
+                        "Компактная процедура для тех, кто хочет сосредоточиться на спине, плечах и шее. Подходит, когда нет времени на общий массаж, но хочется расслабить наиболее напряжённые зоны."
+                  ],
+                  [
+                        "Авторский массаж",
+                        "60 мин",
+                        "Индивидуальная процедура, основанная на многолетнем опыте специалиста. В зависимости от запроса могут сочетаться расслабляющие, моделирующие, лимфодренажные или более активные техники — с акцентом именно на потребности конкретного человека."
+                  ],
+                  [
+                        "Express massage",
+                        "20 мин",
+                        "Короткая процедура для одной выбранной зоны: шея и плечи, спина, руки или ноги. Удобный формат, когда времени немного, но хочется уделить внимание локальному напряжению."
+                  ]
+            ]
+      },
+      "en": {
+            "face": [
+                  [
+                        "Hollywood Facial Lifting Massage",
+                        "45 min",
+                        "A modelling facial treatment with particular attention to gentle muscle relaxation and a fresher appearance of the skin. It suits clients looking to combine facial care with a calm, restorative experience."
+                  ],
+                  [
+                        "Neuro-bio-structural Facial Chiromassage",
+                        "45 min",
+                        "A relaxing technique with attentive work on the facial muscles. This treatment may be chosen when the face feels tense or tired, or when a delicate, comfort-focused facial ritual is desired."
+                  ],
+                  [
+                        "Classic Facial Massage",
+                        "30 min",
+                        "A gentle facial care treatment using classic manual techniques. A good choice for regular care, a refreshed appearance and relaxation within a shorter appointment."
+                  ]
+            ],
+            "body": [
+                  [
+                        "Modelling Massage",
+                        "60 min",
+                        "A more active manual treatment focused on selected body areas and the appearance of the skin. It is intended for clients who wish to give particular attention to body contours, tone and a feeling of lightness."
+                  ],
+                  [
+                        "Abhyanga Ayurvedic Oil Massage",
+                        "60 min",
+                        "A full-body massage with oil inspired by Ayurvedic tradition. Flowing movements and a warm, unhurried atmosphere make this treatment especially suitable for deep relaxation and comfort."
+                  ],
+                  [
+                        "Anti-cellulite Massage",
+                        "60 min",
+                        "An intensive manual treatment for selected body areas, such as the thighs, buttocks or abdomen. The focus is on active tissue work, skin tone and an individually agreed choice of areas."
+                  ],
+                  [
+                        "Anti-cellulite Chiromassage",
+                        "60 min",
+                        "A more individually tailored body treatment in which active techniques can be combined with lymphatic-drainage-inspired and relaxing elements. Areas and intensity are discussed before the appointment."
+                  ],
+                  [
+                        "Full Body and Neck Massage",
+                        "60 min",
+                        "A classic full-body massage with particular attention to the back, shoulders and neck area. It is often chosen after prolonged desk work, physical activity or a demanding period; intensity is adjusted individually."
+                  ],
+                  [
+                        "Sports Massage",
+                        "60 min",
+                        "A more intensive treatment for people with an active lifestyle. The session can focus on areas placed under strain during exercise and is suitable for relaxation after physical activity."
+                  ],
+                  [
+                        "Relaxing Massage",
+                        "60 min",
+                        "A gentle, rhythmic massage created for calm and a genuine pause during a busy week. The emphasis is on comfort, quiet and the restorative feeling of unhurried touch."
+                  ],
+                  [
+                        "Pregnancy Massage",
+                        "60 min",
+                        "A delicate treatment adapted for the comfort of the expectant mother. Wellbeing, positioning and areas requiring particularly gentle attention are discussed before the session."
+                  ],
+                  [
+                        "Children’s Massage",
+                        "30 min",
+                        "A gentle treatment for children, adapted to age and individual needs. The format and purpose of the massage are discussed with a parent in advance."
+                  ],
+                  [
+                        "Back and Neck Massage",
+                        "30 min",
+                        "A focused appointment for the back, shoulders and neck. Suitable when time is limited but attention to the areas that feel most tense is desired."
+                  ],
+                  [
+                        "Signature Massage",
+                        "60 min",
+                        "An individual treatment based on the specialist’s many years of experience. Depending on the request, relaxing, modelling, drainage-inspired or more active techniques can be combined around the client’s needs."
+                  ],
+                  [
+                        "Express Massage",
+                        "20 min",
+                        "A short treatment for one selected area: neck and shoulders, back, arms or legs. A convenient format when time is limited and local tension needs attention."
+                  ]
+            ]
+      },
+      "lt": {
+            "face": [
+                  [
+                        "Holivudinė veido plastika",
+                        "45 min",
+                        "Modeliuojanti veido procedūra, kurioje ypatingas dėmesys skiriamas švelniam raumenų atpalaidavimui ir gaivesnei odos išvaizdai. Tinka norint derinti veido priežiūrą su ramiu poilsio pojūčiu."
+                  ],
+                  [
+                        "Neuro-bio-struktūrinis veido chiromasažas",
+                        "45 min",
+                        "Atpalaiduojanti technika, skirta dėmesingam darbui su veido raumenimis. Procedūrą galima rinktis jaučiant veido įtampą ar nuovargį, arba norint švelnios, komfortiškos priežiūros."
+                  ],
+                  [
+                        "Klasikinis veido masažas",
+                        "30 min",
+                        "Švelni veido priežiūros procedūra, atliekama klasikiniais rankų judesiais. Tinka reguliariai priežiūrai, gaivos pojūčiui ir atsipalaidavimui per trumpesnį vizitą."
+                  ]
+            ],
+            "body": [
+                  [
+                        "Modeliuojantis masažas",
+                        "60 min",
+                        "Aktyvesnė rankinė procedūra, orientuota į pasirinktas kūno zonas ir odos išvaizdą. Tinka norint skirti daugiau dėmesio kūno kontūrams, tonusui ir lengvumo pojūčiui."
+                  ],
+                  [
+                        "Abhyanga ajurvedinis aliejinis masažas",
+                        "60 min",
+                        "Viso kūno masažas su aliejumi, įkvėptas ajurvedinės tradicijos. Tolygūs judesiai ir rami procedūros atmosfera ypač tinka giliam atsipalaidavimui ir komfortui."
+                  ],
+                  [
+                        "Anticeliulitinis masažas",
+                        "60 min",
+                        "Intensyvesnė rankinė procedūra pasirinktoms kūno zonoms, pavyzdžiui, šlaunims, sėdmenims ar pilvo sričiai. Dėmesys skiriamas aktyviam audinių darbui, odos tonusui ir individualiai aptartoms zonoms."
+                  ],
+                  [
+                        "Anticeliulitinis chiromasažas",
+                        "60 min",
+                        "Individualiau pritaikoma kūno procedūra, kurioje aktyvesni judesiai gali būti derinami su limfodrenažiniu ir atpalaiduojančiu akcentu. Zonos ir intensyvumas aptariami prieš vizitą."
+                  ],
+                  [
+                        "Viso kūno ir kaklo masažas",
+                        "60 min",
+                        "Klasikinis viso kūno masažas, ypatingą dėmesį skiriant nugarai, pečiams ir kaklo sričiai. Dažnai pasirenkamas po ilgo sėdimo darbo, fizinio krūvio ar įtempto laikotarpio; intensyvumas parenkamas individualiai."
+                  ],
+                  [
+                        "Sportinis masažas",
+                        "60 min",
+                        "Intensyvesnė procedūra aktyvų gyvenimo būdą gyvenantiems žmonėms. Masažo metu galima daugiau dėmesio skirti fizinio krūvio veikiamoms zonoms ir atsipalaidavimui po aktyvumo."
+                  ],
+                  [
+                        "Atpalaiduojantis masažas",
+                        "60 min",
+                        "Švelnus ritmiškas masažas, skirtas ramybei ir tikrai pauzei įtemptos savaitės metu. Svarbiausia — komfortas, tyla ir malonus poilsio pojūtis po procedūros."
+                  ],
+                  [
+                        "Masažas nėščiosioms",
+                        "60 min",
+                        "Švelni procedūra, pritaikyta būsimos mamos komfortui. Prieš masažą aptariama savijauta, patogi kūno padėtis ir zonos, kurioms reikia ypatingai švelnaus dėmesio."
+                  ],
+                  [
+                        "Vaikų masažas",
+                        "30 min",
+                        "Švelni procedūra vaikams, pritaikoma pagal amžių ir individualius poreikius. Masažo formatas ir tikslas iš anksto aptariami su vienu iš tėvų."
+                  ],
+                  [
+                        "Nugaros ir kaklo masažas",
+                        "30 min",
+                        "Tikslinga procedūra nugarai, pečiams ir kaklui. Tinka, kai laiko nedaug, tačiau norisi skirti dėmesio labiausiai įsitempusioms zonoms."
+                  ],
+                  [
+                        "Autorinis masažas",
+                        "60 min",
+                        "Individuali procedūra, paremta ilgamete specialistės patirtimi. Atsižvelgiant į poreikį, gali būti derinamos atpalaiduojančios, modeliuojančios, drenažinės ar aktyvesnės technikos."
+                  ],
+                  [
+                        "Express masažas",
+                        "20 min",
+                        "Trumpa procedūra vienai pasirinktai zonai: kaklui ir pečiams, nugarai, rankoms arba kojoms. Patogus formatas, kai laiko nedaug, bet norisi pasirūpinti lokalia įtampa."
+                  ]
+            ]
+      }
+};
+
+    let currentLang = "lt";
+
+    function renderServices(lang) {
+      const render = (list) => list.map(([name, duration, description]) => `
+        <details>
+          <summary>
+            <span class="service-name">${name}</span>
+            <span class="service-right"><span class="duration">${duration}</span><span class="plus">+</span></span>
+          </summary>
+          <div class="description">${description}</div>
+        </details>`).join("");
+      document.getElementById("face-services").innerHTML = render(services[lang].face);
+      document.getElementById("body-services").innerHTML = render(services[lang].body);
+    }
+
+    function setLanguage(lang) {
+      currentLang = lang;
+      document.documentElement.lang = lang;
+      document.querySelectorAll("[data-t]").forEach(el => {
+        const value = translations[lang][el.dataset.t];
+        if (value !== undefined) el.innerHTML = value;
+      });
+      document.querySelectorAll(".language button").forEach(button => {
+        button.classList.toggle("active", button.dataset.lang === lang);
+      });
+      renderServices(lang);
+    }
+
+    document.querySelectorAll(".language button").forEach(button => {
+      button.addEventListener("click", () => setLanguage(button.dataset.lang));
+    });
+    setLanguage("lt");
+  </script>
+</body>
+</html>
